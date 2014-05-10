@@ -120,7 +120,7 @@ background: black;
 }
 
 .person .head{
-     background: #40403D;
+     fill: red;
   border: 1px solid black;
   width:70px;
   height: 70px;
@@ -395,7 +395,9 @@ background: black;
   color: transparent;
 }
 
-
+.test{
+    fill: green;
+}
 .hide{
   display:none;
 }
