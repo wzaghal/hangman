@@ -6,6 +6,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -17,22 +20,58 @@
         <!-- endbuild -->
     </head>
     <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <div class="wrapper">
 
+        <h1> What's my middle name?</h1>        
+        <div class="game">
+            <div class="apparatus">
+                <div class="support"></div>
+                <div class="noose"></div>
+                <div class="left-leg"></div>
+                <div class="base"></div>
+                <div class="right-leg"></div>
+                <div class="head"></div>
+            </div>
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Sass</li>
-
-          </ul>
+            <div class="person">
+                <div class="head hide"></div>
+                <div class="body hide"></div>
+                <div class="left-arm hide"></div>
+                <div class="right-arm hide"></div>
+                <div class="left-leg hide"></div>
+                <div class="right-leg hide"></div>
+            </div>
         </div>
 
 
+          <div class="letters">
+                <ul>
+                  <li class="letter1 hide-text">
+                    <h3>F</h3>
+                  </li>
+                  <li class="letter2 hide-text">
+                    <h3>A</h3>
+                  </li>
+                  <li class="letter3 hide-text">
+                    <h3>W</h3>
+                  </li>
+                  <li class="letter4 hide-text">
+                    <h3>A</h3>
+                  </li>
+                  <li class="letter5 hide-text">
+                    <h3>Z</h3>
+                  </li>
+                </ul>
+
+                
+                <ul class="wrong-letters" id="wrong-letters">
+                </ul>
+            
+            </div>
+
+            <div class="success hide"><h2>Success</h2></div>
+            <div class="fail hide"><h2>fail</h2></div>
+    </div>      
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
