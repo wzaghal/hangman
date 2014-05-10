@@ -5,10 +5,30 @@ $(document).ready(function(){
 	var isDone = false;
 	var correctKeys = 0;
 
-	var letters=[70,65,87,90];
 	var wrongLetters=[];
 
+	var answer = [{
+		keyCode: 70,
+		isDisplayed: false
+	},
+	{
+		keyCode:65,
+		isDisplayed: false
+	},
+	{
+		keyCode: 87,
+		isDisplayed: false
+	},
+	{
+		keyCode: 90,
+		isDisplayed: false
 
+	}
+	];
+
+
+
+	
 	var pushToList = function(keyCode){
 		wrongLetters.push(keyCode);
 		var letter= String.fromCharCode(keyCode);
@@ -17,29 +37,40 @@ $(document).ready(function(){
 	};
 
 
+	var showLetter = function(index){
+		$('.letter'+(index+1)).removeClass('hide-text');
+
+	};
+
+
+
 	$(document).keyup(function(e) {
 
 		if (chances > 0 && !isDone){
 			
 			
 			//Right letter	
-			if( e.keyCode === letters[0]){ //f
-				$('.letter1').removeClass('hide-text');
+			if( e.keyCode === answer[0].keyCode){ //f
+				showLetter(0);
+				answer[0].isDisplayed = true;
 				correctKeys++;
 			}
-			else if (e.keyCode === letters[1]){ //a
-				$('.letter2').removeClass('hide-text');
-				$('.letter4').removeClass('hide-text');
+			else if (e.keyCode === answer[1].keyCode){ //a
+				showLetter(1);
+				showLetter(3);
+				answer[1].isDisplayed = true;
 				correctKeys++;
 				correctKeys++;
 
-			}else if (e.keyCode === letters[2]){ //w
-				$('.letter3').removeClass('hide-text');
+			}else if (e.keyCode === answer[2].keyCode){ //w
+				showLetter(2);
+				answer[2].isDisplayed = true;
 				correctKeys++;
 
 			}
-			else if (e.keyCode === letters[3]){ //z
-				$('.letter5').removeClass('hide-text');
+			else if (e.keyCode === answer[3].keyCode){ //z
+				showLetter(4);
+				answer[3].isDisplayed = true;
 				correctKeys++;
 
 			}
@@ -47,7 +78,7 @@ $(document).ready(function(){
 
 
 			//possibly a wrong character
-			else if ( letters.indexOf(e.keyCode) === -1 ){
+			else{
 
 				//definitely wrong character
 				if (wrongLetters.indexOf(e.keyCode) === -1 ){
@@ -90,14 +121,24 @@ $(document).ready(function(){
 
 			
 		}
-		
-	if (chances === 0){
-		console.log('test');
-		$('.fail').removeClass('hide');
-	}else if (isDone){
-		console.log('test');
-		$('.success').removeClass('hide');
-	}});
+		if (chances === 0){
+			for (var i = 0; i < answer.length; i++){
+
+				if (!answer[i].isDisplayed){
+					//temp solution to char 'z'
+					if (i === 3){
+						showLetter(i+1);
+					}
+					showLetter(i);
+					answer[i].isDisplayed = true;
+				}
+			}
+			$('.fail').removeClass('hide');
+		}else if (isDone){
+			console.log('test');
+			$('.success').removeClass('hide');
+		}
+	});
 
 
 	
