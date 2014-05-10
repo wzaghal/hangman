@@ -1,15 +1,14 @@
 // bower:scss
 // endbower
 
+$person:('head','body','leftArm','rightArm','leftLeg','rightLeg');
+
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
 
-/*.hide{
-  display:none;
-}*/
 
 *{
   -moz-box-sizing: border-box;
@@ -30,10 +29,6 @@ h1{
 .wrapper{
   margin: 0 25% 0 25%;
 }
-
-
-
-
 
 .apparatus{
   position: relative;
@@ -119,85 +114,7 @@ background: black;
   position:relative;
 }
 
-.person .head{
-     fill: red;
-  border: 1px solid black;
-  width:70px;
-  height: 70px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 220px;
-  border-radius: 190px / 150px;
-  top:60px;
-  z-index:1
-}
 
-.person .body{
-    border: 1px solid black;
-  background: #40403D;
-  width:12px;
-  height: 125px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 250px;
-  top: 130px;
-  z-index:5
-}
-
-.person .left-arm{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 70px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 220px;
-  top: 140px;
-  -webkit-transform:rotate(40deg); /* Opera, Chrome, and Safari */
-}
-
-.person .right-arm{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 70px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 280px;
-  top: 140px;
-  -webkit-transform:rotate(137deg); /* Opera, Chrome, and Safari */
-}
-
-.person .right-leg{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 80px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 275px;
-  top: 238px;
-  -webkit-transform:rotate(137deg); /* Opera, Chrome, and Safari */
-}
-
-.person .left-leg{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 80px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 225px;
-  top: 238px;
-  -webkit-transform:rotate(40deg); /* Opera, Chrome, and Safari */
-  z-index:4;
-}
 
 ul{
   display:inline;
@@ -224,7 +141,7 @@ h3{
 
 .support{
   width:12px;
-  height: 360px;
+  height: 460px;
   border-radius: 10px;
   margin: 100px;
   position: absolute;
@@ -240,7 +157,7 @@ h3{
   border-radius: 10px;
   margin: 100px;
   position: absolute;
-  top: 343px;
+  top: 443px;
   left: -19px;
  transform:rotate(40deg);
   -ms-transform:rotate(40deg); /* IE 9 */
@@ -255,7 +172,7 @@ background: black;
   border-radius: 10px;
   margin: 100px;
   position: absolute;
-  top: 343px;
+  top: 443px;
   left: 18px;
  transform:rotate(40deg);
   -ms-transform:rotate(0deg); /* IE 9 */
@@ -302,84 +219,18 @@ background: black;
   position:relative;
 }
 
-.person .head{
-     background: #40403D;
-  border: 1px solid black;
-  width:70px;
-  height: 70px;
-  border-radius: 10px;
+%human{
   margin: 100px;
+  width:50%;
   position: absolute;
-  left: 220px;
-  border-radius: 190px / 150px;
-  top:60px;
-  z-index:1
+  left: 77px;
+  top:70px;
 }
 
-.person .body{
-    border: 1px solid black;
-  background: #40403D;
-  width:12px;
-  height: 125px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 250px;
-  top: 130px;
-  z-index:5
-}
-
-.person .left-arm{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 70px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 220px;
-  top: 140px;
-  -webkit-transform:rotate(40deg); /* Opera, Chrome, and Safari */
-}
-
-.person .right-arm{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 70px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 280px;
-  top: 140px;
-  -webkit-transform:rotate(137deg); /* Opera, Chrome, and Safari */
-}
-
-.person .right-leg{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 80px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 275px;
-  top: 238px;
-  -webkit-transform:rotate(137deg); /* Opera, Chrome, and Safari */
-}
-
-.person .left-leg{
-    border: 1px solid black;
-  background: #40403D;
-   width:12px;
-  height: 80px;
-  border-radius: 10px;
-  margin: 100px;
-  position: absolute;
-  left: 225px;
-  top: 238px;
-  -webkit-transform:rotate(40deg); /* Opera, Chrome, and Safari */
-  z-index:4;
+@each $part in $person{
+  .person .#{$part}{
+    @extend %human;
+  }
 }
 
 
