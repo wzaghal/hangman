@@ -78,7 +78,7 @@ $(document).ready(function(){
 			
 		}
 		if (chances === 0){
-			for (var i = 0; i < answer.length; i++){
+			for (i = 0; i < answer.length; i++){
 
 				if (!answer[i].isDisplayed){
 					showLetter(i);
