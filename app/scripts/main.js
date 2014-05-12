@@ -35,6 +35,7 @@ $(document).ready(function(){
 
 		//if the game is still running
 		if (chances > 0 && !isDone){
+			correctLetter = false;
 
 
 			//loop through array to check
