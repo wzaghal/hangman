@@ -32,6 +32,8 @@ $(document).ready(function(){
 
 
 	$(document).keyup(function(e) {
+		console.log("correct keys:" + correctKeys);
+		console.log("LENGTH L " + answer.length);
 
 		//if the game is still running
 		if (chances > 0 && !isDone){
@@ -72,10 +74,12 @@ $(document).ready(function(){
 					}
 					chances--;
 				}
-				if (correctKeys === 5){
-					isDone=true;
-				}
+
+				
 			}
+			if (correctKeys === answer.length){
+					isDone=true;
+				};
 			
 		}
 		if (chances === 0){
